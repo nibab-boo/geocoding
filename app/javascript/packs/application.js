@@ -20,12 +20,17 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
-import { initMapbox } from '../packs/_init_mapbox'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initMapbox } from '../packs/_init_mapbox'
+import { initAutocomplete } from '../packs/init_autocomplete'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
+  const addressInput = document.getElementById('flat_address');
+  if (addressInput) {
+    initAutocomplete();
+  }
 });
